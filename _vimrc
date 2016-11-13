@@ -11,6 +11,9 @@ augroup source-vimrc
     autocmd BufWritePost *gvimrc if has('gui_running') source $MYGVIMRC
 augroup END
 
+" runtime path
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
 " color scheme
 colorscheme jellybeans
 syntax enable
@@ -97,4 +100,16 @@ inoremap <C-a> <Esc>^a
 
 " disable IME
 set imdisable
+
+" leader
+let mapleader = "\<Space>"
+nnoremap <Leader>o :CtrlP<CR>
+nnoremap <Leader>w :w<CR>
+noremap <Leader>v 0v$h
+noremap <Leader>d 0v$hx
+noremap <Leader>y 0v$hy
+map <Leader>co <S-i># <ESC>
+map <Leader>uc ^xx<ESC>
+vmap <Leader>co <S-i># <ESC>
+vnoremap <Leader>p "0p
 
