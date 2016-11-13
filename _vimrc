@@ -52,11 +52,15 @@ set autoread
 set showcmd
 
 " clipboard
+set clipboard+=unnamed
 set clipboard=unnamed,autoselect
 noremap PP "0p
 noremap x "_x
 
 " search
+set ignorecase
+set smartcase
+set incsearch
 set nowrapscan
 set hlsearch
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
@@ -74,12 +78,23 @@ set title
 " visual bell
 set visualbell
 
+" backspace
+set backspace=indent,eol,start
+
 " scroll
 set scrolloff=5
 
 " window
 set lines=60 columns=80
 set transparency=0
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+nnoremap <S-Left> <C-w><<CR>
+nnoremap <S-Right> <C-w>><CR>
+nnoremap <S-Up> <C-w>+<CR>
+nnoremap <S-Down> <C-w>-<CR>
 
 " keybind
 " normal mode
@@ -96,7 +111,11 @@ inoremap <Left> <Nop>
 inoremap <Right> <Nop>
 inoremap <silent> jj <Esc>
 inoremap <C-e> <Esc>$a
-inoremap <C-a> <Esc>^a
+inoremap <C-a> <Esc>^i
+inoremap <C-h> <Left>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
 
 " disable IME
 set imdisable
